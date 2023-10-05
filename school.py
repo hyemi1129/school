@@ -350,3 +350,36 @@ w=input()
 s,c=map(int,input().split())
 mysubstr(w,s,c) """
 
+""" 
+리스트 값 다 더하기
+
+n = input().split()
+sum = int(0)
+
+for i in range(5) :
+    n[i] =int(n[i])
+
+for i in range(5) :
+    sum += n[i]
+
+print(sum)
+"""
+
+""" 
+수행평가(리스트를 가지고 함수로 아무거나 그냥 다함)
+
+1. 리스트 값 다 더하기 (재귀함수)
+"""
+
+""" 
+def a(n):
+    if not n:
+        return 0
+
+        return n[0] + a(n[1:])
+
+my_list = [1, 2, 3, 4, 5]
+
+result = a(my_list)
+print(result)
+ """
