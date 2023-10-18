@@ -382,4 +382,75 @@ my_list = [1, 2, 3, 4, 5]
 
 result = a(my_list)
 print(result)
- """
+"""
+
+""" def list_sum(num_list):
+    the_sum = 0
+    for i in num_list:
+        the_sum = the_sum + i
+    return the_sum
+
+print(list_sum([1, 2, 3, 4, 5])) """
+
+""" 
+d = [[0 for j in range(20)] for i in range(20)]
+n = int(input())
+for i in range(n):    
+   x,y = map(int,input().split())    
+   d[x][y] = 1
+
+for i in range(1,20):    
+   for j in range(1,20):        
+      print(d[i][j], end=' ')   
+   print()
+"""
+
+""" def fibonacci(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2) """
+
+""" import time
+import random
+
+WORD_LIST=[
+    "아무 문장이나 적으세요",
+    "코딩하는 하루 되세요",
+    "여러분 화이팅",
+    "오늘 급식 뭐죠?"
+]
+
+random.shuffle(WORD_LIST)
+
+for i in WORD_LIST:
+    start_time=time.time()
+    user_input=str(input(i+'\n')).strip()
+    end_time=time.time()-start_time
+
+    correct = 0
+    for index, c in enumerate(user_input):
+        if index >= len(i):
+            break
+        if c == i[index]:
+            correct+=1
+
+    total_len=len(i)
+    c = correct/total_len*100
+    e = (total_len-correct)/total_len*100
+    speed=correct / end_time *60
+
+    print("속도 : {:0.2f} 정확도 : {:0.2f} 오타율 {:0.2f}".format(speed,c,e)) """
+
+class Bssm:
+    def __init__(self, task, age, name):
+        self.team="부소마" #Bssm클래스로 찍어낸 객체들은 모두 team 변수에 부소마가 들어가도록
+        self.task=task #나머지는 다 다르게
+        self.age=age
+        self.name=name
+        
+    def intro(self):
+        print("안녕하세요, %s에서 %s를 담당하고 있는 %d살 %s입니다." %(self.team, self.task, self.age, self.name))
+
