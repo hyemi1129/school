@@ -444,7 +444,7 @@ for i in WORD_LIST:
 
     print("속도 : {:0.2f} 정확도 : {:0.2f} 오타율 {:0.2f}".format(speed,c,e)) """
 
-class Bssm:
+""" class Bssm:
     def __init__(self, task, age, name):
         self.team="부소마" #Bssm클래스로 찍어낸 객체들은 모두 team 변수에 부소마가 들어가도록
         self.task=task #나머지는 다 다르게
@@ -452,5 +452,51 @@ class Bssm:
         self.name=name
         
     def intro(self):
-        print("안녕하세요, %s에서 %s를 담당하고 있는 %d살 %s입니다." %(self.team, self.task, self.age, self.name))
+        print("안녕하세요, %s에서 %s를 담당하고 있는 %d살 %s입니다." %(self.team, self.task, self.age, self.name)) """
+
+""" class Grade:
+    def __init__(self, name, score):
+        self.name = name
+        self.score=score
+    def s_grade(self):
+        if self.score >= 90:
+            self.grade="A"
+        elif self.score >= 80:
+            self.grade="B"
+        else:
+            self.grade="C"
+    def __str__(self):
+        return "%s: %c 등급" %(self.name, self.grade)
+    
+a1 = Grade("이름", 89)
+a1.s_grade()
+print(a1) """
+
+class FishCakeMaker:
+    def __init__(self, **kwargs): # 가변인자매개변수
+        self.size=10
+        self.flavor="팥"
+        self.price=100
+
+        if "size" in kwargs:
+            self.size = kwargs.get("size") # kwargs 딕셔너리 안에 size라는 key값이 있냐? 있다면 가져와서 size 변수에 대입
+        if "flavor" in kwargs:
+            self.flavor=kwargs.get("flavor")
+        if "price" in kwargs:
+            self.price=kwargs.get("price")
+
+    def show(self):
+        print("붕어빵 크기 {}".format(self.size))
+        print("붕어빵 종류 {}".format(self.flavor))
+        print("붕어빵 가격 {}".format(self.price))
+        print("*"*30)
+
+fish1=FishCakeMaker()
+fish2=FishCakeMaker(size=20, price=300)
+fish3=FishCakeMaker(flavor="초콜릿", size=15)
+
+fish1.show()
+fish2.show()
+fish3.show()
+
 
