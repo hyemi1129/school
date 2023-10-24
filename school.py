@@ -472,7 +472,7 @@ a1 = Grade("이름", 89)
 a1.s_grade()
 print(a1) """
 
-class FishCakeMaker:
+""" class FishCakeMaker:
     def __init__(self, **kwargs): # 가변인자매개변수
         self.size=10
         self.flavor="팥"
@@ -497,6 +497,6 @@ fish3=FishCakeMaker(flavor="초콜릿", size=15)
 
 fish1.show()
 fish2.show()
-fish3.show()
+fish3.show() """
 
 
