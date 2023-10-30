@@ -499,4 +499,26 @@ fish1.show()
 fish2.show()
 fish3.show() """
 
+"""문자열 거꾸로 출력"""
+""" s = 'abcde'
+
+for i in range(len(s)-1, -1, -1):
+    print(s[i], end='') """
+
+""" s = 'abcde'
+
+s_reverse = ''
+for char in s:
+    s_reverse = char + s_reverse
+    print(s_reverse) """
+
+""" 거꾸로 출력하기 겁나 쉬운 방법 """
+""" s = 'abcde'
+print(s[::-1]) """
+
+""" 
+ex)
+s = 'abcde'
+print(s[3::1]) # -> [start:end:stop]
+"""
 
