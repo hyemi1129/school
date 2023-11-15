@@ -3,7 +3,7 @@ a = input()
 a = int(a)
 
 sum=0
-for i in range(1, a+1):s
+for i in range(1, a+1):
     if a%2==0 :
         sum+=i
     
@@ -526,7 +526,7 @@ print(s[3::1]) # -> [start:end:stop]
 list = [None]*stack_size
 top=-1
 
-def isEmpty(): 
+def isEmpty():
     if top == -1 : return True
     else : return False
 
@@ -557,3 +557,59 @@ def peek():
     if not isEmpty():
         return list[top]
     else : pass """
+
+""" class CircularQueue :
+    def __init__(self, capacity = 5):
+        self.capacity = capacity
+        self.list = [None]*capacity
+        self.front = 0
+        self.rear = 0
+
+    def isEmpty(self): 
+        
+    def isFull(self):
+
+    def enqueue(self, item):
+
+    def dequeue(self): """
+
+
+""" n = int(input())
+
+for i in range(1, 7):
+    for j in range(1, 7):
+        if i+j == n:
+            print(i, j) """
+
+
+
+""" a, b = map(int, input().split())
+
+while a%b != 0:
+    a, b = b, a%b
+
+print(b) """
+
+""" 재귀함수로 바꾼거 ↓ """
+
+""" def gcd(a, b):
+    while b:
+        a, b = b, a%b
+    return a
+
+x, y = map(int, input().split())
+result = gcd(x, y)
+print(result) """
+
+""" 다른 재귀함수 ↓ """
+
+""" a, b = map(int, input().split())
+
+def gcd(a, b):
+    if a%b==0:
+        return b
+    return gcd(b, a%b)
+
+print(gcd(a,b)) """
+
+
