@@ -558,21 +558,6 @@ def peek():
         return list[top]
     else : pass """
 
-""" class CircularQueue :
-    def __init__(self, capacity = 5):
-        self.capacity = capacity
-        self.list = [None]*capacity
-        self.front = 0
-        self.rear = 0
-
-    def isEmpty(self): 
-        
-    def isFull(self):
-
-    def enqueue(self, item):
-
-    def dequeue(self): """
-
 
 """ n = int(input())
 
@@ -613,3 +598,18 @@ def gcd(a, b):
 print(gcd(a,b)) """
 
 
+""" class CircularQueue :
+    def __init__(self, capacity = 5):
+        self.capacity = capacity
+        self.list = [None]*capacity
+        self.front = 0
+        self.rear = 0
+
+    def isEmpty(self):
+        return self.front == self.rear
+    def isFull(self):
+        return self.front == (self.rear+1)%self.capacity
+    def enqueue(self, item):
+        //
+    def dequeue(self):
+        // """
