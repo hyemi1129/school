@@ -472,33 +472,6 @@ a1 = Grade("이름", 89)
 a1.s_grade()
 print(a1) """
 
-""" class FishCakeMaker:
-    def __init__(self, **kwargs): # 가변인자매개변수
-        self.size=10
-        self.flavor="팥"
-        self.price=100
-
-        if "size" in kwargs:
-            self.size = kwargs.get("size") # kwargs 딕셔너리 안에 size라는 key값이 있냐? 있다면 가져와서 size 변수에 대입
-        if "flavor" in kwargs:
-            self.flavor=kwargs.get("flavor")
-        if "price" in kwargs:
-            self.price=kwargs.get("price")
-
-    def show(self):
-        print("붕어빵 크기 {}".format(self.size))
-        print("붕어빵 종류 {}".format(self.flavor))
-        print("붕어빵 가격 {}".format(self.price))
-        print("*"*30)
-
-fish1=FishCakeMaker()
-fish2=FishCakeMaker(size=20, price=300)
-fish3=FishCakeMaker(flavor="초콜릿", size=15)
-
-fish1.show()
-fish2.show()
-fish3.show() """
-
 """문자열 거꾸로 출력"""
 """ s = 'abcde'
 
@@ -522,42 +495,6 @@ s = 'abcde'
 print(s[3::1]) # -> [start:end:stop]
 """
 
-""" stack_size = 5
-list = [None]*stack_size
-top=-1
-
-def isEmpty():
-    if top == -1 : return True
-    else : return False
-
-def isFull():
-    return top == stack_size-1
-
-def push(e):
-    global top
-    if not isFull():
-        top = top+1
-        list[top] = e
-        print(list)
-    else:
-        print("stack overflow")
-        exit()
-
-def pop():
-    global top
-    if not isEmpty():
-        top = -1
-        return list[top-1]
-    else:
-        print("stack underflow")
-        exit()
-
-
-def peek():
-    if not isEmpty():
-        return list[top]
-    else : pass """
-
 
 """ n = int(input())
 
@@ -565,7 +502,6 @@ for i in range(1, 7):
     for j in range(1, 7):
         if i+j == n:
             print(i, j) """
-
 
 
 """ a, b = map(int, input().split())
@@ -598,23 +534,6 @@ def gcd(a, b):
 print(gcd(a,b)) """
 
 
-""" class CircularQueue :
-    def __init__(self, capacity = 5):
-        self.capacity = capacity
-        self.list = [None]*capacity
-        self.front = 0
-        self.rear = 0
-
-    def isEmpty(self):
-        return self.front == self.rear
-    def isFull(self):
-        return self.front == (self.rear+1)%self.capacity
-    def enqueue(self, item):
-        //
-    def dequeue(self):
-        // """
-
-
 """ 최대공약수 구하기 """
 
 """ def gcd(a, b):
@@ -632,7 +551,7 @@ def gcd(a, b):
     return gcd(b, a%b)
 print(gcd(a, b)) """
 
-a = int(input())
+""" a = int(input())
 cnt = 0
 
 for i in [50000, 10000, 5000, 1000, 500, 100, 50, 10]:
@@ -640,4 +559,71 @@ for i in [50000, 10000, 5000, 1000, 500, 100, 50, 10]:
         cnt += a//i
         a = a%i
 
-print(cnt)
+print(cnt) """
+
+""" class FishCakeMaker:
+    def __init__(self, **kwargs): # 가변인자매개변수이기 때문에 **이 붙음 → 매개변수 자리의 개수 지정 X / init 초기화
+        self.size=10
+        self.flavor="팥"
+        self.price=100
+
+        if "size" in kwargs:
+            self.size = kwargs.get("size") # kwargs 딕셔너리 안에 size라는 key값이 있냐? 있다면 가져와서 size 변수에 대입
+        if "flavor" in kwargs:
+            self.flavor=kwargs.get("flavor")
+        if "price" in kwargs:
+            self.price=kwargs.get("price")
+
+    def show(self):
+        print("붕어빵 크기 {}".format(self.size))
+        print("붕어빵 종류 {}".format(self.flavor))
+        print("붕어빵 가격 {}".format(self.price))
+        print("*"*30)
+
+fish1=FishCakeMaker() # **을 붙였기 때문에 안넣어도 됨
+fish2=FishCakeMaker(size=20, price=300)
+fish3=FishCakeMaker(flavor="초콜릿", size=15)
+
+fish1.show()
+fish2.show()
+fish3.show()
+
+#붕어빵기계 클래스를 상속받은 마켓굿즈
+
+class MarketGoods(FishCakeMaker):
+    def __init__(self, margin=1000, **kwargs):
+        super().__init__(**kwargs)
+        self.market_price = self.price + margin
+    def show(self):
+        print(self.flavor, self.market_price)
+
+fish1 = MarketGoods(size=20, price=500)
+fish1.show()
+"""
+
+class Country:
+    """Super Class"""
+
+    name = '국가명'
+    population = '인구'
+    capital = '수도'
+
+    def show(self):
+        print('국가 클래스의 메소드입니다.')
+
+class Korea(Country):
+    """Sub Class"""
+
+    def __init__(self, name, population, capital):
+        self.name = name
+        self.population = population
+        self.capital = capital
+
+    def show(self):
+        print(
+            """
+            국가의 이름은 {} 입니다.
+            국가의 인구는 {} 입니다.
+            국가의 수도는 {} 입니다.
+            """.format(self.name, self.population, self.capital)
+        )
