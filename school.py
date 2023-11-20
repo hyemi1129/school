@@ -613,3 +613,31 @@ print(gcd(a,b)) """
         //
     def dequeue(self):
         // """
+
+
+""" 최대공약수 구하기 """
+
+""" def gcd(a, b):
+    while b!=0:
+        a, b = b, a%b
+    return a
+a, b = map(int, input().split())
+print(gcd(a, b)) """
+
+""" a, b = map(int, input().split())
+
+def gcd(a, b):
+    if a%b == 0:
+        return b
+    return gcd(b, a%b)
+print(gcd(a, b)) """
+
+a = int(input())
+cnt = 0
+
+for i in [50000, 10000, 5000, 1000, 500, 100, 50, 10]:
+    if a // i != 0:
+        cnt += a//i
+        a = a%i
+
+print(cnt)
