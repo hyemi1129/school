@@ -601,8 +601,7 @@ fish1 = MarketGoods(size=20, price=500)
 fish1.show()
 """
 
-class Country:
-    """Super Class"""
+""" class Country:
 
     name = '국가명'
     population = '인구'
@@ -612,7 +611,6 @@ class Country:
         print('국가 클래스의 메소드입니다.')
 
 class Korea(Country):
-    """Sub Class"""
 
     def __init__(self, name, population, capital):
         self.name = name
@@ -621,9 +619,90 @@ class Korea(Country):
 
     def show(self):
         print(
-            """
             국가의 이름은 {} 입니다.
             국가의 인구는 {} 입니다.
             국가의 수도는 {} 입니다.
-            """.format(self.name, self.population, self.capital)
-        )
+            .format(self.name, self.population, self.capital)
+        ) """
+
+
+# 스택 응용
+
+class ArrayStack:
+    def __init__(self, capacity):
+        self.capacity = capacity
+        self.array = [None] * capacity
+        self.top = -1
+
+    def isEmpty(self):
+        return self.top == -1
+
+    def isFUll(self):
+        return self.top == self.capacity - 1
+
+    def push(self, e):
+        if not self.isFull():
+            self.top += 1
+            self.array[self.top] = e
+            print(self.array)
+        else:
+            exit()
+
+    def pop(self):
+        if not self.isEmpty():
+            self.top -= 1
+            return self.array[self.top + 1]
+        else:
+            exit()
+
+    def peek(self):
+        if not self.isEmpty():
+            return self.array[self.top]
+        else:
+            pass
+
+# 연산자 우선순위 계산 함수
+def precedence(op):
+    if op == '*' or op == '/': return 2
+    elif op == '+' or op == '-': return 1
+    elif op == '(' or op == ')': return 0
+    else : return -1
+
+# 중위표기 -> 후위표기로 바꾸는 함수
+def Infix2Postfix(expr):
+    s = ArrayStack(100)
+    output = []
+
+    for term in expr:
+        if term in '(':
+              s.push('(')
+
+        elif term in ')':
+            while not s.isEmpty():
+                op = s.pop()
+                if op == '(':
+                    break
+                else:
+                    output.append(op)
+            
+        elif term in "*/+-":
+            while not s.isEmpty():
+                op = s.peek()     
+                if (precedence(term) <= precedence(op)):
+                    output.append(op)
+                    s.pop
+
+                else : break
+            s.push(term)
+        else:
+            output.append(term)
+
+        
+    while not s.isEmpty():
+        output.append(s.pop)
+    return output
+
+infix1 = input()
+infix1 = list(infix1)
+postfix1=Infix2Postfix(infix1)
+print(postfix1)
